@@ -4,7 +4,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
-IZIN=$( curl http://vpnasian.com/autoscript/ipvps.conf | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ipvps.conf | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
