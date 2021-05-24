@@ -89,10 +89,10 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O add-wg "https://vpnasian.com/autoscript/add-wg.sh"
-wget -O del-wg "https://vpnasian.com/autoscript/del-wg.sh"
-wget -O cek-wg "https://vpnasian.com/autoscript/cek-wg.sh"
-wget -O renew-wg "https://vpnasian.com/autoscript/renew-wg.sh"
+wget -O add-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-wg.sh"
+wget -O del-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/del-wg.sh"
+wget -O cek-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cek-wg.sh"
+wget -O renew-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/renew-wg.sh"
 chmod +x add-wg
 chmod +x del-wg
 chmod +x cek-wg

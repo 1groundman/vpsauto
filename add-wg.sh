@@ -1,22 +1,7 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-MYIP=$(wget -qO- icanhazip.com);
-echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ipvps.conf | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo "Only For Premium Users"
-exit 0
-fi
 clear
 # Load params
 source /etc/wireguard/params
-source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
 SERVER_PUB_IP=$(wget -qO- icanhazip.com);
 else
 SERVER_PUB_IP=$IP
