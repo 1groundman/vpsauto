@@ -16,7 +16,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://vpnasian.com/autoscript/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 mkdir /root/.acme.sh
@@ -494,31 +494,31 @@ systemctl enable v2ray
 # download script
 cd /usr/bin
 #wget -O menu "https://raw.githubusercontent.com/zahwanugrah/vpninjector/main/menu.sh"
-wget -O add-ws "https://vpnasian.com/autoscript/add-ws.sh"
-wget -O add-vless "https://vpnasian.com/autoscript/add-vless.sh"
-wget -O add-tr "https://vpnasian.com/autoscript/add-tr.sh"
-wget -O del-ws "https://vpnasian.com/autoscript/del-ws.sh"
-wget -O del-vless "https://vpnasian.com/autoscript/del-vless.sh"
-wget -O del-tr "https://vpnasian.com/autoscript/del-tr.sh"
-wget -O cek-ws "https://vpnasian.com/autoscript/cek-ws.sh"
-wget -O cek-vless "https://vpnasian.com/autoscript/cek-vless.sh"
-wget -O cek-tr "https://vpnasian.com/autoscript/cek-tr.sh"
-wget -O renew-ws "https://vpnasian.com/autoscript/renew-ws.sh"
-wget -O renew-vless "https://vpnasian.com/autoscript/renew-vless.sh"
-wget -O renew-tr "https://vpnasian.com/autoscript/renew-tr.sh"
-wget -O change-port "https://vpnasian.com/autoscript/change.sh"
-wget -O port-ws "https://vpnasian.com/autoscript/port-ws.sh"
-wget -O port-vless "https://vpnasian.com/autoscript/port-vless.sh"
-wget -O port-wg "https://vpnasian.com/autoscript/port-wg.sh"
-wget -O port-tr "https://vpnasian.com/autoscript/port-tr.sh"
-wget -O certv2ray "https://vpnasian.com/autoscript/cert.sh"
-wget -O menu "https://vpnasian.com/autoscript/menu.sh"
-wget -O bannermenu "https://vpnasian.com/autoscript/bannermenu"
-wget -O vvt "https://vpnasian.com/autoscript/vvt.sh"
-wget -O shadowsocks "https://vpnasian.com/autoscript/shadowsocks.sh"
-wget -O wireguard "https://vpnasian.com/autoscript/wireguard.sh"
-wget -O options "https://vpnasian.com/autoscript/vvt-options.sh"
-wget -O update "https://vpnasian.com/autoscript/update.sh"
+wget -O add-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-ws.sh"
+wget -O add-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-vless.sh"
+wget -O add-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-tr.sh"
+wget -O del-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/del-ws.sh"
+wget -O del-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/del-vless.sh"
+wget -O del-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/del-tr.sh"
+wget -O cek-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cek-ws.sh"
+wget -O cek-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cek-vless.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cek-tr.sh"
+wget -O renew-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/renew-ws.sh"
+wget -O renew-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/renew-vless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/renew-tr.sh"
+wget -O change-port "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/change.sh"
+wget -O port-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-vless.sh"
+wget -O port-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-tr.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cert.sh"
+wget -O menu "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/menu.sh"
+wget -O bannermenu "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/bannermenu"
+wget -O vvt "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/vvt.sh"
+wget -O shadowsocks "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/shadowsocks.sh"
+wget -O wireguard "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/wireguard.sh"
+wget -O options "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/vvt-options.sh"
+wget -O update "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/update.sh"
 chmod +x add-ws
 chmod +x add-vless
 chmod +x add-tr
