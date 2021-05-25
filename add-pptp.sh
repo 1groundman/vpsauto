@@ -1,11 +1,5 @@
 #!/bin/bash
 clear
-source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
-PUBLIC_IP=$(wget -qO- icanhazip.com);
-else
-PUBLIC_IP=$IP
-fi
 until [[ $VPN_USER =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username: " -e VPN_USER
 		CLIENT_EXISTS=$(grep -w $VPN_USER /var/lib/premium-script/data-user-pptp | wc -l)
