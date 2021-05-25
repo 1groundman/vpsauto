@@ -7,7 +7,19 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- icanhazip.com);
+IZIN=$( curl https://vpnasian.com/autoscript/ipvps.conf | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "${green}Permission Accepted...${NC}"
+else
+echo -e "${red}Permission Denied!${NC}";
+echo "Please Contact Admin"
+echo "Telegram t.me/bosok69"
+rm -f setup.sh
+exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
 echo "Script Already Installed"
@@ -24,20 +36,20 @@ cd
 rm -rf /root/.bashrc
 wget -O /root/.bashrc https://raw.githubusercontent.com/emue25/cream/mei/.bashrc
 #install cf
-wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://vpnasian.com/autoscript/cf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
-#wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-#wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+#wget https://vpnasian.com/autoscript/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+#wget https://vpnasian.com/autoscript/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
-wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://vpnasian.com/autoscript/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://vpnasian.com/autoscript/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://vpnasian.com/autoscript/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
-wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+wget http://vpnasian.com/autoscript/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #install L2TP
-#wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-#wget https://raw.githubusercontent.com/lanundarat87/vpsauto/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+#wget https://vpnasian.com/autoscript/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+#wget https://vpnasian.com/autoscript/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 # install webserver
@@ -45,9 +57,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://vpnasian.com/autoscript/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://vpnasian.com/autoscript/vps.conf"
 /etc/init.d/nginx restart
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
@@ -76,7 +88,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/set.sh"
+wget -O /etc/set.sh "https://vpnasian.com/autoscript/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver

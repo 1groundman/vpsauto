@@ -7,6 +7,20 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ifconfig.co);
+IZIN=$( curl https://vpnasian.com/autoscript/ipvps.conf | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "${green}Permission Accepted...${NC}"
+else
+echo -e "${red}Permission Denied!${NC}";
+echo "Please Contact Admin"
+echo "Telegram t.me/bosok69"
+rm -f setup.sh
+exit 0
+fi
 versi=$(cat /home/ver)
 if [[ $versi == 1.2 ]]; then
 echo "You Have The Latest Version"
@@ -14,25 +28,25 @@ exit 0
 fi
 echo "Start Update"
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/trial.sh"
-wget -O change-port "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/xp.sh"
-wget -O limit-speed "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/limit-speed.sh"
-wget -O add-sstp "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-sstp.sh"
-wget -O add-ws "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/lanundarat87/vpsauto/main/add-tr.sh"
+wget -O menu "https://vpnasian.com/autoscript/menu.sh"
+wget -O usernew "https://vpnasian.com/autoscript/usernew.sh"
+wget -O trial "https://vpnasian.com/autoscript/trial.sh"
+wget -O change-port "https://vpnasian.com/autoscript/change.sh"
+wget -O port-ovpn "https://vpnasian.com/autoscript/port-ovpn.sh"
+wget -O port-ssl "https://vpnasian.com/autoscript/port-ssl.sh"
+wget -O port-wg "https://vpnasian.com/autoscript/port-wg.sh"
+wget -O port-tr "https://vpnasian.com/autoscript/port-tr.sh"
+wget -O port-sstp "https://vpnasian.com/autoscript/port-sstp.sh"
+wget -O port-squid "https://vpnasian.com/autoscript/port-squid.sh"
+wget -O port-ws "https://vpnasian.com/autoscript/port-ws.sh"
+wget -O port-vless "https://vpnasian.com/autoscript/port-vless.sh"
+wget -O wbmn "https://vpnasian.com/autoscript/webmin.sh"
+wget -O xp "https://vpnasian.com/autoscript/xp.sh"
+wget -O limit-speed "https://vpnasian.com/autoscript/limit-speed.sh"
+wget -O add-sstp "https://vpnasian.com/autoscript/add-sstp.sh"
+wget -O add-ws "https://vpnasian.com/autoscript/add-ws.sh"
+wget -O add-vless "https://vpnasian.com/autoscript/add-vless.sh"
+wget -O add-tr "https://vpnasian.com/autoscript/add-tr.sh"
 chmod +x change-port
 chmod +x port-ovpn
 chmod +x port-ssl
